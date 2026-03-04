@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie</title>
+</head>
+<body>
+    Wybierz kolor tła:
+<select onchange="ustawKolor(this.value)">
+    <option value="">wybierz kolor</option>
+    <option value="red">Czerwony</option>
+    <option value="blue">Niebieski</option>
+    <option value="green">Zielony</option>
+    <option value="pink">Różowy</option>
+</select>
+
+<br><br>
+
+Rozmiar czcionki:
+<input type="range" min="10" max="40" onchange="ustawRozmiar(this.value)">
+
+<br><br>
+
+<button onclick="reset()">Przywróć domyślne</button>
+
+<script>
+document.body.style.background = localStorage.getItem("kolor");
+document.body.style.fontSize = localStorage.getItem("rozmiar") + "px";
+
+function ustawKolor(kolor) {
+    document.body.style.background = kolor;
+    localStorage.setItem("kolor", kolor);
+}
+
+function ustawRozmiar(r) {
+    document.body.style.fontSize = r + "px";
+    localStorage.setItem("rozmiar", r);
+}
+
+function reset() {
+    localStorage.clear();
+    location.reload();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cwiczenie 1</title>
+</head>
+<body>
+    
+<input id="imie" placeholder="Wpisz imie">
+<button onclick="zapisz()">Zapisz</button>
+
+<script>
+document.getElementById("imie").value = localStorage.getItem("imie");
+
+function zapisz() {
+    localStorage.setItem("imie", document.getElementById("imie").value);
+}
+</script>
+</body>
+</html>

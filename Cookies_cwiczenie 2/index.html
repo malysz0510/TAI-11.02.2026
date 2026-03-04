@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cwiczenie 2</title>
+</head>
+<body>
+<p>Licznik: <span id="licznik"></span></p>
+
+<script>
+let x = sessionStorage.getItem("licznik");
+
+if (x == null) x = 0;
+
+x++;
+sessionStorage.setItem("licznik", x);
+
+document.getElementById("licznik").innerHTML = x;
+</script>
+</body>
+</html>
